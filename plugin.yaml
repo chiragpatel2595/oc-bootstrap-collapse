@@ -1,0 +1,11 @@
+plugin:
+    name: 'chiragpatel.bootstrapcollapse::lang.plugin.name'
+    description: 'chiragpatel.bootstrapcollapse::lang.plugin.description'
+    author: 'Chirag Patel'
+    icon: oc-icon-expand
+    homepage: ''
+navigation:
+    collapses:
+        label: 'chiragpatel.bootstrapcollapse::lang.plugin.name'
+        url: chiragpatel/bootstrapcollapse/collapses
+        icon: icon-expand

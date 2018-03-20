@@ -1,0 +1,7 @@
+columns:
+    title:
+        label: chiragpatel.bootstrapcollapse::lang.collapses.title
+        type: text
+    updated_at:
+        label: chiragpatel.bootstrapcollapse::lang.collapses.updated_at
+        type: datetime

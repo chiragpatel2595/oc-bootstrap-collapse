@@ -1,0 +1,67 @@
+{% if __SELF__.collapses|length > 0 %}
+<div id="accordion">
+    {% for collapse in __SELF__.collapses %}
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-{{ collapse.id }}"
+                        aria-expanded="true"
+                        aria-controls="collapseOne">
+                    {{ collapse.title }}
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapse-{{ collapse.id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                {{ collapse.description|raw }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% if collapses.lastPage > 1 %}
+<nav aria-label="Page navigation" class="mt-3">
+    <ul class="pagination justify-content-center">
+        {% if collapses.currentPage > 1 %}
+        <li class="page-item"><a class="page-link" href="#" data-request="onPageChange"
+                                 data-request-update="'@collapsible-items': '#collapsible-items'"
+                                 data-request-success="closePreviousAccordion()"
+                                 data-request-data="page: '{{collapses.currentPage-1}}'">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..collapses.lastPage %}
+        <li class="page-item {{ collapses.currentPage == page ? 'active' : null }}">
+            <a href="#" class="page-link" data-request="onPageChange"
+               data-request-update="'@collapsible-items': '#collapsible-items'"
+               data-request-success="closePreviousAccordion()"
+               data-request-data="page: '{{page}}'">{{ page }}</a>
+        </li>
+        {% endfor %}
+
+        {% if collapses.lastPage > collapses.currentPage %}
+        <li class="page-item"><a class="page-link" href="#" data-request="onPageChange"
+                                 data-request-success="closePreviousAccordion()"
+                                 data-request-update="'@collapsible-items': '#collapsible-items'"
+                                 data-request-data="page: '{{collapses.currentPage+1}}'">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
+
+{% put collapse %}
+<script>
+    $(document).ready(function () {
+        closePreviousAccordion();
+    });
+
+    function closePreviousAccordion() {
+        var $accordion = $('#accordion');
+        $accordion.click(function () {
+            $accordion.find('.collapse.in').collapse('hide');
+        });
+    }
+</script>
+{% endput %}

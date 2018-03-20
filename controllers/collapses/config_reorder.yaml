@@ -1,0 +1,5 @@
+title: Reorder Collapses
+nameFrom: title
+modelClass: ChiragPatel\BootstrapCollapse\Models\Collapse
+toolbar:
+    buttons: reorder_toolbar

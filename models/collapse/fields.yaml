@@ -1,0 +1,15 @@
+fields:
+    title:
+        label: chiragpatel.bootstrapcollapse::lang.collapses.title
+        span: left
+        type: text
+    description:
+        label: chiragpatel.bootstrapcollapse::lang.collapses.description
+        size: giant
+        span: full
+        type: richeditor
+    is_active:
+        label: chiragpatel.bootstrapcollapse::lang.collapses.is_active
+        span: left
+        default: 1
+        type: switch

@@ -1,0 +1,10 @@
+name: chiragpatel.bootstrapcollapse::lang.collapses.backend_name
+form: $/chiragpatel/bootstrapcollapse/models/collapse/fields.yaml
+modelClass: ChiragPatel\BootstrapCollapse\Models\Collapse
+defaultRedirect: chiragpatel/bootstrapcollapse/collapses
+create:
+    redirect: 'chiragpatel/bootstrapcollapse/collapses/update/:id'
+    redirectClose: chiragpatel/bootstrapcollapse/collapses
+update:
+    redirect: chiragpatel/bootstrapcollapse/collapses
+    redirectClose: chiragpatel/bootstrapcollapse/collapses
