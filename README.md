@@ -44,5 +44,5 @@ This plugin has different properties as per below:
 
 **Notes:** 
 
-* For Using this plugin, you must have to include Bootstrap theme in your Layout.
+* For Using this plugin, you must have to include Bootstrap in your Layout.
 If not you can select different versions of Bootstrap so it will direct include bootstrap  in page.
